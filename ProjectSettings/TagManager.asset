@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Puk
   - Enemy
+  - Puck
   layers:
   - Default
   - TransparentFX
@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - Table
-  - Raket
+  - Racket
   - 
   - 
   - 

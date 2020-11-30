@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1b52625f531984fa335aa2dab676de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePosition: {fileID: 0}
-  pukObject: {fileID: 0}
+  score: {fileID: 0}
   isPlayer: 1
   speed: 10

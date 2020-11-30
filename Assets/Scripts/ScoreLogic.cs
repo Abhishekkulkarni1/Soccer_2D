@@ -1,36 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ScoreLogic : MonoBehaviour
 {
-    public static int playerScore { get;  private set; }
-    public static int enemyScore { get;  private set; }
-    public GameObject pukObject;
-    public Transform pukStartTransform;
+    public static int PlayerScore { get; private set; }
+    public static int EnemyScore { get; private set; }
+    public GameObject puckObject;
+
+    public Transform puckStart;
+
     public bool playerGate;
 
 
     void OnTriggerEnter(Collider other)
     {
-        Vector3 pukPosition = new Vector3(pukStartTransform.position.x,pukStartTransform.position.y,pukStartTransform.position.z);
-        Quaternion pukRotation = pukStartTransform.rotation;
-
-        if (other.gameObject.CompareTag("Puk"))
+        if (other.gameObject.CompareTag("Puck"))
         {
             Destroy(other.gameObject);
-            Instantiate(pukObject, pukPosition, pukRotation);
+            Instantiate(puckObject, puckStart.position, puckStart.rotation);
             if (playerGate)
             {
-                enemyScore++;
-                print("Enemy Score is " + enemyScore);
+                EnemyScore++;
+                print("Enemy Score is " + EnemyScore);
             }
             else
             {
-                playerScore++;
-                print("Player Score is " + playerScore);
+                PlayerScore++;
+                print("Player Score is " + PlayerScore);
             }
         }
     }
-
 }

@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 7010922242037584234}
   - component: {fileID: -6254414975857015675}
   m_Layer: 0
-  m_Name: Puk
-  m_TagString: Puk
+  m_Name: Puck
+  m_TagString: Puck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,4 +126,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 7010922242037584234}
   force: 0.2
-  slowThreshold: 1.2

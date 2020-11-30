@@ -244,9 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a719adfac62e674495d4f875a80ef7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pukObject: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
+  puckObject: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
     type: 3}
-  pukStartTransform: {fileID: 601338232}
+  puckStart: {fileID: 601338232}
   playerGate: 0
 --- !u!1 &43484301
 GameObject:
@@ -769,12 +769,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d4d03f6b3b35d4bb2ab9dd1486c90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pukObject: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
-    type: 3}
-  pukStartTransform: {fileID: 601338232}
-  enemyObject: {fileID: 5672169957918339280, guid: a2ae90edfe1afc44dbdd7f2eafff10e8,
-    type: 3}
-  enemyStartTransform: {fileID: 749609619}
+  puck: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6, type: 3}
+  puckStart: {fileID: 601338232}
+  enemy: {fileID: 5672169957918339280, guid: a2ae90edfe1afc44dbdd7f2eafff10e8, type: 3}
+  enemyStart: {fileID: 749609619}
 --- !u!54 &299140797
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1193,9 +1191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a719adfac62e674495d4f875a80ef7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pukObject: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
+  puckObject: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
     type: 3}
-  pukStartTransform: {fileID: 601338232}
+  puckStart: {fileID: 601338232}
   playerGate: 1
 --- !u!1 &444671671
 GameObject:
@@ -1273,7 +1271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 601338232}
   m_Layer: 0
-  m_Name: pukStartpoint
+  m_Name: puckStartpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2739,6 +2737,11 @@ PrefabInstance:
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5672169957918339293, guid: a2ae90edfe1afc44dbdd7f2eafff10e8,
+        type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1017138028}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ae90edfe1afc44dbdd7f2eafff10e8, type: 3}
 --- !u!1001 &7010922242938274568
@@ -2750,13 +2753,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7313730779143611421, guid: f172dd09b7ebe8842bb09f94b08073e6,
         type: 3}
-      propertyPath: pukObject
+      propertyPath: puck
       value: 
       objectReference: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
         type: 3}
     - target: {fileID: -7313730779143611421, guid: f172dd09b7ebe8842bb09f94b08073e6,
         type: 3}
-      propertyPath: pukPosition
+      propertyPath: puckPosition
       value: 
       objectReference: {fileID: 601338232}
     - target: {fileID: -6254414975857015675, guid: f172dd09b7ebe8842bb09f94b08073e6,
@@ -2772,7 +2775,7 @@ PrefabInstance:
     - target: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
         type: 3}
       propertyPath: m_Name
-      value: Puk
+      value: Puck
       objectReference: {fileID: 0}
     - target: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
         type: 3}

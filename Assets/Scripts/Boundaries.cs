@@ -1,33 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Boundaries : MonoBehaviour
 {
-    public GameObject pukObject;
-    public Transform pukStartTransform;
-    
-    public GameObject enemyObject;
-    public Transform enemyStartTransform;
+    public GameObject puck;
+
+    public Transform puckStart;
+
+    public GameObject enemy;
+
+    public Transform enemyStart;
 
     void OnTriggerExit(Collider other)
     {
-        Vector3 pukPosition = new Vector3(pukStartTransform.position.x,pukStartTransform.position.y,pukStartTransform.position.z);
-        Quaternion pukRotation = pukStartTransform.rotation;
-        
-        Vector3 enemyPosition = new Vector3(enemyStartTransform.position.x,enemyStartTransform.position.y,enemyStartTransform.position.z);
-        Quaternion enemyRotation = enemyStartTransform.rotation;
-        
-        if (other.gameObject.CompareTag("Puk"))
+        // TODO instead of destroying and re-instantiating, consider just moving the objects
+
+        if (other.gameObject.CompareTag("Puck"))
         {
             Destroy(other.gameObject);
-            Instantiate(pukObject, pukPosition, pukRotation);
-            
+            Instantiate(puck, puckStart.position, puckStart.rotation);
         }
-        else if(other.gameObject.CompareTag("Enemy"))
+        else if (other.gameObject.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
-            Instantiate(enemyObject, enemyPosition, enemyRotation);
+            Instantiate(enemy, enemyStart.position, enemyStart.rotation);
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -12,39 +10,33 @@ public class UI : MonoBehaviour
     public Text pauseText;
     public Button continueButton;
     public Button exitButton;
-    private bool isPaused = false;
+    private bool _isPaused = false;
 
     void Start()
     {
+        // TODO suggestion: make a list of buttons and apply actions over lists. ask me
+
         pauseText.gameObject.SetActive(false);
         continueButton.gameObject.SetActive(false);
         exitButton.gameObject.SetActive(false);
-        
-        Button contbtn = continueButton.GetComponent<Button>();
-        contbtn.onClick.AddListener(DeactivatePauseMenu);
-        
-        Button exitbtn = exitButton.GetComponent<Button>();
-        exitbtn.onClick.AddListener(ReturnToMainMenu);
+
+        continueButton.onClick.AddListener(DeactivatePauseMenu);
+        exitButton.onClick.AddListener(ReturnToMainMenu);
     }
-    
+
     void Update()
     {
-        int scoreEnemy = ScoreLogic.enemyScore;
-        string scoreString = scoreEnemy.ToString();
-        enemyBanner.text = "Enemy: " + scoreString;
-        
-        int scorePlayer = ScoreLogic.playerScore;
-        string scoreStringPlayer = scorePlayer.ToString();
-        playerBanner.text = "Player: " + scoreStringPlayer;
+        enemyBanner.text = "Enemy: " + ScoreLogic.EnemyScore;
+        playerBanner.text = "Player: " + ScoreLogic.PlayerScore;
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && !_isPaused)
         {
             print("Pause Game");
             ActivatePauseMenu();
             Time.timeScale = 0;
-            isPaused = true;
+            _isPaused = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        else if (Input.GetKeyDown(KeyCode.Escape) && _isPaused)
         {
             print("Resume");
             DeactivatePauseMenu();
@@ -57,7 +49,7 @@ public class UI : MonoBehaviour
         continueButton.gameObject.SetActive(true);
         exitButton.gameObject.SetActive(true);
         Time.timeScale = 0;
-        isPaused = true;
+        _isPaused = true;
     }
 
     public void DeactivatePauseMenu()
@@ -66,7 +58,7 @@ public class UI : MonoBehaviour
         continueButton.gameObject.SetActive(false);
         exitButton.gameObject.SetActive(false);
         Time.timeScale = 1;
-        isPaused = false;
+        _isPaused = false;
     }
 
     public void ReturnToMainMenu()
