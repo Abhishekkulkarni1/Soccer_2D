@@ -54,11 +54,10 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+[Tt]est/
 
 # Crashlytics generated file
 crashlytics-build.properties
 
 # IntelliJ stuff
 .idea/
-
-
