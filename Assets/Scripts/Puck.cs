@@ -34,7 +34,7 @@ public class Puck : MonoBehaviour
         if (_collided && _racket && _fresh)
         {
             _currentTransformVector = transform.position;
-            rigidBody.AddForce(_currentTransformVector.normalized * force, ForceMode.Impulse);
+            // rigidBody.AddForce(_currentTransformVector.normalized * force, ForceMode.Impulse);
             _collided = false;
             _racket = false;
             _fresh = false;

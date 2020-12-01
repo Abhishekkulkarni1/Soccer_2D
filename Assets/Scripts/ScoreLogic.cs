@@ -5,7 +5,7 @@ public class ScoreLogic : MonoBehaviour
 {
     public static int PlayerScore { get; private set; }
     public static int EnemyScore { get; private set; }
-    public GameObject puckObject;
+    public GameObject puck;
 
     public Transform puckStart;
 
@@ -17,7 +17,7 @@ public class ScoreLogic : MonoBehaviour
         if (other.gameObject.CompareTag("Puck"))
         {
             Destroy(other.gameObject);
-            Instantiate(puckObject, puckStart.position, puckStart.rotation);
+            Instantiate(puck, puckStart.position, puckStart.rotation);
             if (playerGate)
             {
                 EnemyScore++;

@@ -244,8 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a719adfac62e674495d4f875a80ef7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puckObject: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
-    type: 3}
+  puck: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6, type: 3}
   puckStart: {fileID: 601338232}
   playerGate: 0
 --- !u!1 &43484301
@@ -895,9 +894,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 35.324306
+  m_Height: 10.92
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: -0.8269347, z: -0.00000011920929}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &328586501
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -990,7 +989,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &370720540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,8 +1190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a719adfac62e674495d4f875a80ef7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puckObject: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
-    type: 3}
+  puck: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6, type: 3}
   puckStart: {fileID: 601338232}
   playerGate: 1
 --- !u!1 &444671671
@@ -1324,28 +1322,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &669851014 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5672169957918339280, guid: a2ae90edfe1afc44dbdd7f2eafff10e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 5672169957269466454}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &669851020
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669851014}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,7 +1646,6 @@ GameObject:
   - component: {fileID: 1023315940}
   - component: {fileID: 1023315939}
   - component: {fileID: 1023315938}
-  - component: {fileID: 1023315941}
   m_Layer: 0
   m_Name: SidewallTwo
   m_TagString: Untagged
@@ -1752,22 +1727,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023315936}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1023315941
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023315936}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &1238242854
 GameObject:
   m_ObjectHideFlags: 0
@@ -2089,7 +2048,6 @@ GameObject:
   - component: {fileID: 1611605061}
   - component: {fileID: 1611605060}
   - component: {fileID: 1611605059}
-  - component: {fileID: 1611605062}
   m_Layer: 0
   m_Name: SidewallOne
   m_TagString: Untagged
@@ -2171,22 +2129,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611605057}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1611605062
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611605057}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &1673819096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,17 +2602,22 @@ PrefabInstance:
     - target: {fileID: 5672169957918339281, guid: a2ae90edfe1afc44dbdd7f2eafff10e8,
         type: 3}
       propertyPath: m_Height
-      value: 28.680067
+      value: 10.1
       objectReference: {fileID: 0}
     - target: {fileID: 5672169957918339281, guid: a2ae90edfe1afc44dbdd7f2eafff10e8,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.00000011920929
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5672169957918339281, guid: a2ae90edfe1afc44dbdd7f2eafff10e8,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.94460595
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5672169957918339281, guid: a2ae90edfe1afc44dbdd7f2eafff10e8,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5672169957918339292, guid: a2ae90edfe1afc44dbdd7f2eafff10e8,
         type: 3}
@@ -2742,6 +2689,11 @@ PrefabInstance:
       propertyPath: score
       value: 
       objectReference: {fileID: 1017138028}
+    - target: {fileID: 5672169957918339293, guid: a2ae90edfe1afc44dbdd7f2eafff10e8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ae90edfe1afc44dbdd7f2eafff10e8, type: 3}
 --- !u!1001 &7010922242938274568
@@ -2780,6 +2732,16 @@ PrefabInstance:
     - target: {fileID: 7010922242037584213, guid: f172dd09b7ebe8842bb09f94b08073e6,
         type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010922242037584214, guid: f172dd09b7ebe8842bb09f94b08073e6,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010922242037584214, guid: f172dd09b7ebe8842bb09f94b08073e6,
+        type: 3}
+      propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7010922242037584233, guid: f172dd09b7ebe8842bb09f94b08073e6,
@@ -2840,11 +2802,6 @@ PrefabInstance:
     - target: {fileID: 7010922242037584234, guid: f172dd09b7ebe8842bb09f94b08073e6,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7010922242037584234, guid: f172dd09b7ebe8842bb09f94b08073e6,
-        type: 3}
-      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7010922242037584234, guid: f172dd09b7ebe8842bb09f94b08073e6,

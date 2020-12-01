@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(Rigidbody))]
 public class EnemyController : MonoBehaviour
 {
     // TODO simplify puck and puckObject
@@ -12,6 +13,12 @@ public class EnemyController : MonoBehaviour
     private GameObject _puckObject;
     public bool isPlayer = false;
     public float speed = 10f;
+    private Rigidbody _rigidbody;
+
+    private void Start()
+    {
+        _rigidbody = gameObject.GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
@@ -30,13 +37,13 @@ public class EnemyController : MonoBehaviour
             Vector3 halfDistanceBetweenPoints = (puckPosition + scoreVector) / 2;
 
             // TODO remove or explain magic constants ^^
-            transform.position = new Vector3(halfDistanceBetweenPoints.x, 1.705f, -4.44f);
+            _rigidbody.MovePosition(new Vector3(halfDistanceBetweenPoints.x, 1.705f, -4.44f));
         }
         else
         {
             float horizontalMovement = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
             float verticalMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-            transform.Translate(horizontalMovement, 0, verticalMovement);
+            _rigidbody.MovePosition(new Vector3(horizontalMovement, 0, verticalMovement));
         }
     }
 }

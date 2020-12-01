@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
     public Transform cameraPosition;
@@ -7,10 +9,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 _cameraVector;
     private Vector3 _lastKnown;
     private Camera _camera;
-
+    private Rigidbody _rigidbody;
 
     private void Start()
     {
+        _rigidbody = gameObject.GetComponent<Rigidbody>();
         _camera = Camera.main;
     }
 
@@ -27,12 +30,15 @@ public class PlayerController : MonoBehaviour
             //   transform.position = hit.point;
             //   _laskKnown = transform.position;
             // however its more efficient, since transform.position does not need to be queried
-            transform.position = _lastKnown = hit.point;
+            // transform.position = 
+            _lastKnown = hit.point;
+            _rigidbody.MovePosition(_lastKnown);
         }
         else
         {
             Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100f, Color.blue);
-            transform.position = _lastKnown;
+            // transform.position = _lastKnown;
+            _rigidbody.MovePosition(_lastKnown);
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5672169957918339294}
   - component: {fileID: 5672169957918339281}
   - component: {fileID: 5672169957918339293}
+  - component: {fileID: 7342275849285314224}
   m_Layer: 0
   m_Name: PlayerTwo
   m_TagString: Enemy
@@ -88,7 +89,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5672169957918339280}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 209b4e503e1ec4347bee670b8e6e8b3e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
@@ -110,3 +111,19 @@ MonoBehaviour:
   score: {fileID: 0}
   isPlayer: 1
   speed: 10
+--- !u!54 &7342275849285314224
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672169957918339280}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 2
