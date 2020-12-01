@@ -4,7 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    public Transform cameraPosition;
     public LayerMask layerTable;
     private Vector3 _cameraVector;
     private Vector3 _lastKnown;
