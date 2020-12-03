@@ -64,6 +64,6 @@ public class UI : MonoBehaviour
     public void ReturnToMainMenu()
     {
         DeactivatePauseMenu();
-        SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 }
